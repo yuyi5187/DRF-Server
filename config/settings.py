@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     
     # 배포된 백엔드 주소 
-    'https://port-0-drf-server-3prof2llkumhr4n.sel4.cloudtype.app',
+    'port-0-drf-server-3prof2llkumhr4n.sel4.cloudtype.app',
 ]
 
 # CORS 설정
