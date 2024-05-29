@@ -31,10 +31,35 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = 'True'
 # 실제 배포시 DEBUG는 False로 변경!! 
 
-ALLOWED_HOSTS = [ '*' ]
+ALLOWED_HOSTS = [ 
+    'http://127.0.0.1:8000',
+    '127.0.0.1',
+    
+    # 배포된 백엔드 주소 
+    'https://port-0-drf-server-3prof2llkumhr4n.sel4.cloudtype.app/',
+]
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS 설정
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+    
+    # 배포된 백엔드 주소
+    'https://port-0-drf-server-3prof2llkumhr4n.sel4.cloudtype.app/',
+]
+
+# CSRF 설정
+# CSRF 설정
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+    
+    # 배포된 백엔드 주소 
+    'https://port-0-drf-server-3prof2llkumhr4n.sel4.cloudtype.app/',
+]
+
+
 
 # Application definition
 
