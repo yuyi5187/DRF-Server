@@ -28,8 +28,9 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = 'True'
 # 실제 배포시 DEBUG는 False로 변경!! 
+DEBUG = 'True'
+
 
 ALLOWED_HOSTS = [ 
     'http://127.0.0.1:8000',

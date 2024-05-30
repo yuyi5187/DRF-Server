@@ -10,7 +10,7 @@ from .views import *
 
 urlpatterns = [
     path('', include('dj_rest_auth.urls')),
-    path('registeration/', include('dj_rest_auth.registration.urls')),
+    path('', include('dj_rest_auth.registration.urls')),
     path('user-name/', user_name),
     #path('', include(router.urls)),
 ]
