@@ -9,7 +9,15 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     
     def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset().order_by('user__email'))
+        order = request.query_params.get('order')
+        
+        if order == 'user':
+            queryset = self.filter_queryset(self.get_queryset().order_by('user__email'))
+        elif order == 'updated':
+            queryset = self.filter_queryset(self.get_queryset().order_by('-updated_at'))
+        else:
+            queryset = self.filter_queryset(self.get_queryset())
+
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
